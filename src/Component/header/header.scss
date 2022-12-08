@@ -1,0 +1,249 @@
+@import '../../Style/partials/veriabls';
+
+$Primary-Color-Dark: #E89400;
+$Primary-Color-light: #F49F0A;
+$Secondary-Color-light: #FFFFFF;
+$Secondary-Color-Dark: #0A0D13;
+
+//mixins ------
+//
+//  MEDIA QUERIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// A map of breakpoints.
+$breakpoints: (
+    xs: 375px,
+    sm: 640px,
+    md: 960px,
+    lg: 1200px,
+    xl: 1600px,
+    custom-tablet: 768px
+);
+
+//
+//  RESPOND ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        // Get the breakpoint value.
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        // Write the media query.
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+
+        // If the breakpoint doesn't exist in the map.
+    }
+
+    @else {
+
+        // Log a warning.
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+
+//
+//  RESPOND BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-below(sm) {}
+@mixin respond-below($breakpoint) {
+
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        // Get the breakpoint value.
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        // Write the media query.
+        @media (max-width: ($breakpoint-value - 1)) {
+            @content;
+        }
+
+        // If the breakpoint doesn't exist in the map.
+    }
+
+    @else {
+
+        // Log a warning.
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+//
+//  RESPOND BETWEEN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-between(sm, md) {}
+@mixin respond-between($lower, $upper) {
+
+    // If both the lower and upper breakpoints exist in the map.
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+        // Get the lower and upper breakpoints.
+        $lower-breakpoint: map-get($breakpoints, $lower);
+        $upper-breakpoint: map-get($breakpoints, $upper);
+
+        // Write the media query.
+        @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+            @content;
+        }
+
+        // If one or both of the breakpoints don't exist.
+    }
+
+    @else {
+
+        // If lower breakpoint is invalid.
+        @if (map-has-key($breakpoints, $lower)==false) {
+
+            // Log a warning.
+            @warn 'Your lower breakpoint was invalid: #{$lower}.';
+        }
+
+        // If upper breakpoint is invalid.
+        @if (map-has-key($breakpoints, $upper)==false) {
+
+            // Log a warning.
+            @warn 'Your upper breakpoint was invalid: #{$upper}.';
+        }
+    }
+}
+
+// global stayle
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {}
+
+li {
+    list-style: none;
+}
+
+@include respond-above(md) {
+    .nav-container {
+
+
+
+        &.container {
+            &::after {
+                content: '';
+
+
+            }
+
+            &::before {
+                content: '';
+            }
+
+            padding: 0 144px;
+
+            background: #707070;
+            opacity: 100%;
+
+            .nav-itmes {
+                height: 84px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .logo {}
+
+                .nav-list {
+                    display: flex;
+                    align-items: center;
+                    gap: 50px;
+
+                    ul {
+                        display: flex;
+                        gap: 40px;
+
+                        li {
+                            color: $Secondary-Color-light;
+
+                            &:hover {
+                                color: $Primary-Color-Dark;
+                            }
+                        }
+                    }
+                }
+
+                .bar,
+                #checked {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+@include respond-below(md) {
+    .nav-container {
+        background: #70707059;
+      
+      
+        .nav-itmes {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .bar {
+                margin: 8px 23px;
+                width: 30px;
+            }
+
+            .logo svg {
+                width: 100px;
+            }
+
+            .nav-list {
+                position: absolute;
+                top: 55px;
+                left: 100%;
+                right: 0;
+                bottom: 0;
+                background-color: #F49F0A;
+                text-align: center;
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
+
+                ul {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    li {
+                        &:hover {
+                            color: $Secondary-Color-light;
+                        }
+                    }
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+
+
+        }
+
+        #checked:checked~.nav-list {
+            left: 0;
+
+        }
+    }
+}
