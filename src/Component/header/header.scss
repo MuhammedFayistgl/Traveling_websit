@@ -132,7 +132,8 @@ li {
 
 @include respond-above(md) {
     .nav-container {
-
+        display: flex;
+        justify-content: space-between;
 
 
         &.container {
@@ -157,8 +158,10 @@ li {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-
-                .logo {}
+                width: 100%;
+                .logo {
+                    margin-right: 20px;
+                }
 
                 .nav-list {
                     display: flex;
