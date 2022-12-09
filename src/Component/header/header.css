@@ -9,6 +9,10 @@ li {
 }
 
 @media (min-width: 960px) {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+  }
   .nav-container.container {
     padding: 0 144px;
     background: #707070;
@@ -26,6 +30,10 @@ li {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+  }
+  .nav-container.container .nav-itmes .logo {
+    margin-right: 20px;
   }
   .nav-container.container .nav-itmes .nav-list {
     display: flex;
@@ -62,6 +70,7 @@ li {
   }
   .nav-container .nav-itmes .logo svg {
     width: 100px;
+    cursor: pointer;
   }
   .nav-container .nav-itmes .nav-list {
     position: absolute;
