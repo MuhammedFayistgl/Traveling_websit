@@ -70,6 +70,7 @@ li {
   }
   .nav-container .nav-itmes .logo svg {
     width: 100px;
+    cursor: pointer;
   }
   .nav-container .nav-itmes .nav-list {
     position: absolute;
