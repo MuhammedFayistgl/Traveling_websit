@@ -1,0 +1,72 @@
+@import '../../Style/partials/mixins';
+@import '../../Style/partials/globalStyle';
+@import '../../Style/partials/veriabls';
+
+
+
+.maim-img-bg {
+
+    object-fit: cover;
+    position: relative;
+
+    img {
+        width: 100%;
+        
+        @include respond-below(sm) {
+
+        }
+
+    }
+     .main-info-container{
+        position: absolute;
+        top: 125px;
+        left: 140px;
+        @include respond-below(sm){
+            left: 35px;
+            top: 30px;
+        }
+        .info-wraper{
+            color:$Secondary-Color-light;
+            display: flex;
+            flex-direction: column;
+            P{
+                font-family: 'Playfair Display' ;
+                font-weight: 700;
+                font-size: 64px;
+                @include respond-below(sm){
+                    font-size: 25px;
+                }
+            }
+            span{
+                font-family: 'Muli';
+                font-weight: 400;
+                font-size: 18px;
+                position: relative;
+                transform: translateX(68px);
+                margin-top: 25px;
+
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -65px;
+                    bottom: auto;
+                    width: 40px;
+                    height: 1.5px;
+                    background: #FFFFFF;
+                    @include respond-below(sm){
+                        width: 8px;
+                        left: -13px;
+                    }
+                }
+                @include respond-below(sm){
+                    font-size: 8px;
+                    transform: translateX(15px);
+                    margin-top: 15px;
+                }
+            }
+        }
+     }
+}

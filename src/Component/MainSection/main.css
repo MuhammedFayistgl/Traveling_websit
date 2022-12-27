@@ -1,0 +1,49 @@
+.button {
+  border: none;
+  width: 196px;
+  height: 50px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+}
+.button::before {
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  left: 147px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+}
+.button::after {
+  content: "Explore more";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 147px;
+  height: 50px;
+}
+
+.maim-img-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  height: 905px;
+  width: 100%;
+  background: url("../../../public/image/mainImgoverly.png") no-repeat center center fixed;
+}
+.maim-img-bg::before {
+  content: "";
+  background: url("../../../public/image/mainimg.png") no-repeat center center fixed;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  height: 905px;
+  width: 100%;
+}/*# sourceMappingURL=main.css.map */
