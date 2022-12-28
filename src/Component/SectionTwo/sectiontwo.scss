@@ -1,0 +1,119 @@
+@import '../../Style/partials/mixins';
+@import '../../Style/partials/globalStyle';
+@import '../../Style/partials/veriabls';
+
+.sectiontwo-content-wraper {
+    margin-top: -4px;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $Secondary-Color-Dark;
+
+    @include respond-above(md) {
+        flex-direction: row-reverse;
+
+    }
+
+    @include respond-below(md) {
+        display: block;
+    }
+
+    .sectiontwo-content-img {
+        img {
+            width: 712px;
+            height: 783px;
+
+            @include respond-below(md) {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+
+    .sectiontwo-content-info {
+        position: relative;
+        @include respond-above(md) {
+            margin-left: 144px;
+        }
+
+
+        .sectiontwo-content-info-content {
+            @include respond-below(md) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            * {
+                margin: 60px 0;
+            }
+
+            color:$Secondary-Color-light ;
+
+            h5 {
+                font-family: "Playfair Display";
+                font-weight: bold;
+                font-size: 42px;
+            }
+
+            P {
+                width: 82%;
+            }
+        }
+
+        .trip-disply-count {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 830px;
+            height: 142px;
+            top: 329px;
+            z-index: 8;
+            background-color: $Secondary-Color-Dark-light;
+
+            .trip-disply-count-wraper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                align-content: center;
+                justify-content: space-between;
+                width: 680px;
+                height: 86px;
+
+                span {
+                    color: $Secondary-Color-light;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h4 {
+
+                        font-size: 42px;
+                        font-weight: 500;
+
+                    }
+
+                    h6 {
+                        font-family: "muli";
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+        }
+
+        button {
+            &::before {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='17.811' viewBox='0 0 22 17.811'%3E%3Cg id='Page-1' transform='translate(0 0.406)'%3E%3Cg id='Artboard' transform='translate(1 1)'%3E%3Cg id='arrow-right'%3E%3Cpath id='Shape' d='M0 6H20' transform='translate(0 1.5)' fill='none' stroke='%230a0d13' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' fill-rule='evenodd'/%3E%3Cpath id='Shape-2' data-name='Shape' d='M10 0l6 7.5L10 15' transform='translate(4)' fill='none' stroke='%230a0d13' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' fill-rule='evenodd'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                right: -197px;
+
+            }
+
+            margin-top: 172px;
+        }
+    }
+}

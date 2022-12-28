@@ -23,11 +23,18 @@
         align-items: center;
         justify-content: center;
         @include respond-below(md){
-            width: 40px;
-            height: 50px;
+        
             bottom: -35px;
-            right: 39px;
+        
+            width: 35px;
             height: 35px;
+            left: 96px;
+            position: absolute;
+            z-index: 1;
+            background-color: #F49F0A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
 
@@ -61,3 +68,15 @@
     }
 
 }
+// global style >>
+@include respond-above(md){
+   .container{
+     margin: 0 144px;
+} 
+}
+
+ @include respond-below(md){
+    .container{
+        margin: 0 35px;
+    }
+ }

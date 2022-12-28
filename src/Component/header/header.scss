@@ -19,8 +19,8 @@ li {
     header {
         position: relative;
         z-index: 1;
+    
       
-
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -33,18 +33,10 @@ li {
             backdrop-filter: blur(16.2px);
 
             &.container {
-                &::after {
-                    content: '';
+              @include respond-above(md){
 
-
-                }
-
-                &::before {
-                    content: '';
-                }
-
-                padding: 0 144px;
-
+                margin: 0;
+              }
        
 
                 .nav-itmes {
@@ -54,6 +46,7 @@ li {
                     align-items: center;
                     justify-content: space-between;
                     width: 100%;
+                    margin: 0 144px;
 
                     .logo {
                         margin-right: 20px;
@@ -90,6 +83,12 @@ li {
 }
 
 @include respond-below(md) {
+ 
+        .container{
+            margin: 0 0 0 0 ;
+        }
+         
+   
     .nav-container {
         
     background: rgba(0, 0, 0, 0.18);
