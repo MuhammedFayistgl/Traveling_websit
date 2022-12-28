@@ -137,6 +137,11 @@
                         }
                     }
                 }
+                hr{
+                @include respond-below(md){
+                    display: none;
+                }
+                }
             }
 
         }

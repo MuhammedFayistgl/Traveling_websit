@@ -10,6 +10,12 @@ const Main = () => {
           alt="mainimage"
           srcset=""
         />
+          <img className="overlay-img"
+          src={require("../../image/mainImgoverly.png")}
+          alt="mainimage"
+          srcset=""
+        />
+
         <div className="main-info-container">
           <div className="info-wraper">
             <p>

@@ -5,11 +5,24 @@
 
 
 .maim-img-bg {
-
+  
     object-fit: cover;
     position: relative;
-
+    .overlay-img{
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       width: 100%;
+        
+    }
     img {
+        &::before{
+            content: '';
+            background: url('../../image/mainImgoverly.png') no-repeat center center;
+            width: 100%;
+        }
         width: 100%;
         
         @include respond-below(sm) {
