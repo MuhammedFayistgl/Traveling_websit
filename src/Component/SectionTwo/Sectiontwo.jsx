@@ -30,11 +30,14 @@ const Sectiontwo = () => {
                 <span>
                   <h4>268</h4>
                   <h6>Completed Trips</h6>
+                  
                 </span>
+                <hr/>
                 <span>
                   <h4>268</h4>
                   <h6>Completed Trips</h6>
                 </span>
+                <hr />
                 <span>
                   <h4>268</h4>
                   <h6>Completed Trips</h6>

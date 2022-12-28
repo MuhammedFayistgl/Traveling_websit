@@ -37,7 +37,9 @@
         @include respond-above(md) {
             margin-left: 144px;
         }
-
+        @include respond-below(md){
+            height: 600px;
+        }
 
         .sectiontwo-content-info-content {
             @include respond-below(md) {
@@ -48,6 +50,9 @@
 
             * {
                 margin: 60px 0;
+                @include respond-below(md){
+                    margin: 20px 0;   
+                }
             }
 
             color:$Secondary-Color-light ;
@@ -56,6 +61,10 @@
                 font-family: "Playfair Display";
                 font-weight: bold;
                 font-size: 42px;
+                @include respond-below(md){
+                    font-size: 28px;
+                    margin-bottom: 0;
+                }
             }
 
             P {
@@ -71,10 +80,21 @@
             justify-content: center;
             width: 830px;
             height: 142px;
+            @include respond-below(md){
+                top: 407px;
+                width: 100%;
+            }
             top: 329px;
             z-index: 8;
             background-color: $Secondary-Color-Dark-light;
-
+            @include respond-below(md){
+                position: absolute;
+                display: flex;
+              
+                height: 207px;
+                top: 329px;
+                z-index: 8;
+            }
             .trip-disply-count-wraper {
                 display: flex;
                 flex-direction: row;
@@ -83,9 +103,18 @@
                 justify-content: space-between;
                 width: 680px;
                 height: 86px;
+                @include respond-below(md){
+                   
+                    flex-direction: column;
+    
+                    height: 172px;
+                    align-content: center;
+                    justify-content: space-between;
+                }
 
                 span {
                     color: $Secondary-Color-light;
+                    display: flex;
                     flex-direction: column;
                     align-items: center;
 
@@ -93,6 +122,9 @@
 
                         font-size: 42px;
                         font-weight: 500;
+                        @include respond-below(md){
+                            font-size: 28px;
+                        }
 
                     }
 
@@ -100,6 +132,9 @@
                         font-family: "muli";
                         font-size: 18px;
                         font-weight: 500;
+                        @include respond-below(md){
+                            font-size: 15px;
+                        }
                     }
                 }
             }
@@ -114,6 +149,11 @@
             }
 
             margin-top: 172px;
+            @include respond-below(md){
+                top: -169px;
+                margin-left: 53px;
+              
+            }
         }
     }
 }
