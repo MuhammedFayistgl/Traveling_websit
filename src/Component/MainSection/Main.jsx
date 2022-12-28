@@ -3,7 +3,7 @@ import "./main.scss";
 const Main = () => {
   return (
     <>
-      {/* <button className="button"> </button> */}
+      
       <div className=" maim-img-bg">
         <img
           src={require("../../image/mainimg.png")}
@@ -16,6 +16,7 @@ const Main = () => {
               The new way to <br /> plan your next <br /> adventure
             </p>
             <span>Explore the colourful world</span>
+            <button className="button"> </button>
           </div>
         </div>
       </div>
