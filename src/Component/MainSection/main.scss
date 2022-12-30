@@ -5,61 +5,79 @@
 
 
 .maim-img-bg {
-  
+
     object-fit: cover;
     position: relative;
-    .overlay-img{
-       position: absolute;
-       top: 0;
-       left: 0;
-       right: 0;
-       bottom: 0;
-       width: 100%;
-        
-    }
-    img {
-        &::before{
-            content: '';
-            background: url('../../image/mainImgoverly.png') no-repeat center center;
-            width: 100%;
-        }
+
+    .overlay-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
-        
-        @include respond-below(sm) {
-
-        }
 
     }
-     .main-info-container{
+
+    img {
+
+        width: 100%;
+
+    }
+
+    .main-info-container {
         position: absolute;
         top: 125px;
         left: 140px;
-        @include respond-below(sm){
+
+        @include respond-between(sm, md) {
+            top: 64px;
+            left: 63px;
+        }
+
+
+        @include respond-below(sm) {
             left: 35px;
             top: 30px;
         }
-        .info-wraper{
-            color:$Secondary-Color-light;
+
+        .info-wraper {
+            color: $Secondary-Color-light;
             display: flex;
             flex-direction: column;
-            P{
-                font-family: 'Playfair Display' ;
+
+            P {
+                font-family: 'Playfair Display';
                 font-weight: 700;
                 font-size: 64px;
-                @include respond-below(sm){
+
+                @include respond-between(md,lg){
+                    font-size: 50px;
+                    right: 153px;
+                }
+                
+                @include respond-between(sm, md) {
+                    font-size: 40px;
+                }
+                @include respond-below(sm) {
                     font-size: 25px;
                 }
             }
-            span{
+
+            span {
                 font-family: 'Muli';
                 font-weight: 400;
                 font-size: 18px;
                 position: relative;
                 transform: translateX(68px);
                 margin-top: 25px;
-                margin-bottom: 60px;
+                    margin-bottom: 60px;
+                @include respond-between(sm,md){
+                    margin-bottom: 26px;
+                }
+            
 
-                &::before{
+                &::before {
                     content: "";
                     position: absolute;
                     top: 50%;
@@ -68,13 +86,16 @@
                     bottom: auto;
                     width: 40px;
                     height: 1.5px;
-                    background: #FFFFFF;
-                    @include respond-below(sm){
+                    background-color: $Secondary-Color-light;
+                
+
+                    @include respond-below(sm) {
                         width: 8px;
                         left: -13px;
                     }
                 }
-                @include respond-below(sm){
+
+                @include respond-below(sm) {
                     font-size: 8px;
                     transform: translateX(15px);
                     margin-top: 15px;
@@ -82,5 +103,5 @@
                 }
             }
         }
-     }
+    }
 }

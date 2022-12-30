@@ -12,7 +12,7 @@ const Main = () => {
         />
           <img className="overlay-img"
           src={require("../../image/mainImgoverly.png")}
-          alt="mainimage"
+          alt="mainimage-overlay"
           srcset=""
         />
 

@@ -1,0 +1,55 @@
+@import '../../Style/partials/mixins';
+@import '../../Style/partials/globalStyle';
+@import '../../Style/partials/veriabls';
+
+
+
+.bg-color-css {
+    background-color: $Secondary-Color-Dark-Hue-light;
+    width: 100%;
+    height: 1353px;
+
+    .headng-costom-css {
+        font-family: 'Playfair Display';
+        font-size: 42px;
+        font-weight: bold;
+        padding-top: 120px;
+
+
+        @include respond-below(md) {
+            font-family: "Playfair Display";
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 50px;
+
+
+        }
+        @include respond-below(xs){
+            font-size: 15px;
+            padding-top: 20px;
+        }
+    }
+
+    .p-costom-css {
+        padding-top: 30px;
+        font-family: 'muli';
+        font-size: 16px;
+        font-weight: light;
+        margin-bottom: 60px;
+        @include respond-below(sm){
+            margin-bottom: 28px;
+            font-size: 13px;
+            padding-top: 14px;
+        }
+        @include respond-below(xs){
+            font-size: 15px;
+            padding-top: 20px;
+            padding: 0 23px;
+        }
+    }
+
+    p,
+    h2 {
+        color: $Secondary-Color-light;
+    }
+}

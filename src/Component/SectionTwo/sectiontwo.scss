@@ -29,15 +29,23 @@
                 height: 100%;
             }
 
+            @include respond-between(md, lg) {
+                width: 381px;
+                height: 419px;
+
+            }
+
         }
     }
 
     .sectiontwo-content-info {
         position: relative;
+
         @include respond-above(md) {
-            margin-left: 144px;
+            margin-left: 140px;
         }
-        @include respond-below(md){
+
+        @include respond-below(md) {
             height: 600px;
         }
 
@@ -50,9 +58,18 @@
 
             * {
                 margin: 60px 0;
-                @include respond-below(md){
-                    margin: 20px 0;   
+
+                @include respond-between(md, lg) {
+                    margin: 19px 0;
                 }
+
+                @include respond-below(md) {
+                    margin: 20px 0;
+                }
+                @include respond-below(xs){
+                    margin: 8px 0;
+                }
+
             }
 
             color:$Secondary-Color-light ;
@@ -61,7 +78,8 @@
                 font-family: "Playfair Display";
                 font-weight: bold;
                 font-size: 42px;
-                @include respond-below(md){
+
+                @include respond-below(md) {
                     font-size: 28px;
                     margin-bottom: 0;
                 }
@@ -79,22 +97,48 @@
             align-items: center;
             justify-content: center;
             width: 830px;
-            height: 142px;
-            @include respond-below(md){
-                top: 407px;
-                width: 100%;
+            height: 147px;
+
+            // top: 329px;
+            @include respond-above(lg) {
+                top: 369px;
             }
-            top: 329px;
+
+            @include respond-between(md, xl) {
+                width: 657px;
+                height: 124px;
+
+            }
+
+
+
+            @include respond-below(md) {
+                top: 407px;
+                width: 35%;
+                left: 50%;
+                transform: translate(-50%);
+
+            }
+
+
             z-index: 8;
             background-color: $Secondary-Color-Dark-light;
-            @include respond-below(md){
+
+            @include respond-below(md) {
                 position: absolute;
                 display: flex;
-              
+
                 height: 207px;
                 top: 329px;
                 z-index: 8;
             }
+
+            @include respond-below(xs) {
+                width: 57%;
+                top: 382px;
+
+            }
+
             .trip-disply-count-wraper {
                 display: flex;
                 flex-direction: row;
@@ -103,10 +147,16 @@
                 justify-content: space-between;
                 width: 680px;
                 height: 86px;
-                @include respond-below(md){
-                   
+
+                @include respond-between(md, xl) {
+                    width: 531px;
+                }
+
+
+                @include respond-below(md) {
+
                     flex-direction: column;
-    
+
                     height: 172px;
                     align-content: center;
                     justify-content: space-between;
@@ -122,7 +172,8 @@
 
                         font-size: 42px;
                         font-weight: 500;
-                        @include respond-below(md){
+
+                        @include respond-below(md) {
                             font-size: 28px;
                         }
 
@@ -132,15 +183,17 @@
                         font-family: "muli";
                         font-size: 18px;
                         font-weight: 500;
-                        @include respond-below(md){
+
+                        @include respond-below(md) {
                             font-size: 15px;
                         }
                     }
                 }
-                hr{
-                @include respond-below(md){
-                    display: none;
-                }
+
+                hr {
+                    @include respond-below(md) {
+                        display: none;
+                    }
                 }
             }
 
@@ -154,10 +207,15 @@
             }
 
             margin-top: 172px;
-            @include respond-below(md){
+
+            @include respond-between(md, lg) {
+                top: -43px;
+            }
+
+            @include respond-below(md) {
                 top: -169px;
                 margin-left: 53px;
-              
+
             }
         }
     }
